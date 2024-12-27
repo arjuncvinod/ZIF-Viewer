@@ -15,7 +15,8 @@ export function BlankView({ title = 'Blank', sx }) {
         (theme) => ({
           mt: 5,
           width: 1,
-          height: 320,
+          height: "80vh",
+          overflow: 'hidden',
           borderRadius: 2,
           border: `dashed 1px ${theme.vars.palette.divider}`,
           bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.04),
@@ -28,7 +29,7 @@ export function BlankView({ title = 'Blank', sx }) {
 
   return (
     <DashboardContent maxWidth="xl">
-      <Typography variant="h4"> {title} </Typography>
+      {/* <Typography variant="h4"> {title} </Typography> */}
       {renderContent()}
     </DashboardContent>
   );
