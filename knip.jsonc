@@ -1,0 +1,39 @@
+/**
+ * It will scan the project and find all the components that are not used.
+ * https://knip.dev/overview/getting-started
+ * run `npx knip` to run the tool.
+ */
+{
+  "$schema": "https://unpkg.com/knip@5/schema-jsonc.json",
+  "paths": {
+    // aliases resolver
+    // https://knip.dev/reference/configuration#paths
+    "src/*": ["./src/*"],
+  },
+  "project": ["src/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
+  "ignoreExportsUsedInFile": true,
+  "ignoreDependencies": [
+    "@fontsource.+",
+    "@mui/x-data-grid",
+    "@mui/x-tree-view",
+    "@mui/x-date-pickers",
+    "eslint-import-resolver-alias",
+  ],
+  "ignore": [
+    "src/_mock/**",
+    "src/actions/**",
+    "src/auth/**",
+    "src/assets/**",
+    "src/lib/axios.*",
+    "src/routes/hooks/**",
+    "src/utils/format-time.*",
+    // components
+    "src/components/animate/**",
+    // layouts
+    "src/layouts/core/**",
+    "src/layouts/components/**",
+    "src/layouts/nav-config-main-demo.*",
+    // theme
+    "src/theme/**",
+  ],
+}
